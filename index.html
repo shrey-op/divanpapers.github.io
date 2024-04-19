@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Papers Download</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        /* Basic navbar styles */
+        .navbar {
+            display: flex;
+            /* justify-content: space-between; */
+            align-items: center;
+            background-color: #29262d;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        /* Logo styling */
+        .nav-logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .nav-logo a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Link styling */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .logo-img {
+            width: 180px;
+        }
+
+        .nav-links li {
+            margin-left: 60px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ddd;
+        }
+
+        /* Dropdown menu styles */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: flex;
+            position: absolute;
+            background-color: #ea2828;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            transition: 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Optional: Add Font Awesome caret icon for dropdown indicator */
+        .dropbtn i {
+            margin-left: 5px;
+            font-size: 12px;
+        }
+
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 17px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 20px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .dropdown-content {
+            /* display: none; */
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            /* display: block; */
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Select styles */
+        select {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: white;
+            width: 100%;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        /* Paper table styles */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        button {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .footer {
+            position: relative;
+            width: 100%;
+            background: #3586ff;
+            min-height: 50px;
+            padding: 20px 50px;
+            margin-top: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .social-icon,
+        .menu {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+            flex-wrap: wrap;
+        }
+
+        .social-icon__item,
+        .menu__item {
+            list-style: none;
+        }
+
+        .social-icon__link {
+            font-size: 2rem;
+            color: #fff;
+            margin: 0 10px;
+            display: inline-block;
+            transition: 0.5s;
+        }
+
+        .social-icon__link:hover {
+            transform: translateY(-10px);
+        }
+
+        .menu__link {
+            font-size: 1.2rem;
+            color: #fff;
+            margin: 0 10px;
+            display: inline-block;
+            transition: 0.5s;
+            text-decoration: none;
+            opacity: 0.75;
+            font-weight: 300;
+        }
+
+        .menu__link:hover {
+            opacity: 1;
+        }
+
+        .footer p {
+            color: #fff;
+            margin: 15px 0 10px 0;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        .wave {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url("https://i.ibb.co/wQZVxxk/wave.png");
+            background-size: 1000px 100px;
+        }
+
+        .wave#wave1 {
+            z-index: 1000;
+            opacity: 1;
+            bottom: 0;
+            animation: animateWaves 4s linear infinite;
+        }
+
+        .wave#wave2 {
+            z-index: 999;
+            opacity: 0.5;
+            bottom: 10px;
+            animation: animate 4s linear infinite !important;
+        }
+
+        .wave#wave3 {
+            z-index: 1000;
+            opacity: 0.2;
+            bottom: 15px;
+            animation: animateWaves 3s linear infinite;
+        }
+
+        .wave#wave4 {
+            z-index: 999;
+            opacity: 0.7;
+            bottom: 20px;
+            animation: animate 3s linear infinite;
+        }
+
+        @keyframes animateWaves {
+            0% {
+                background-position-x: 1000px;
+            }
+
+            100% {
+                background-positon-x: 0px;
+            }
+        }
+
+        @keyframes animate {
+            0% {
+                background-position-x: -1000px;
+            }
+
+            100% {
+                background-positon-x: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Your Exam Papers Hub</h1>
+        <p>Access exam papers for your study needs!</p>
+        <h6>By : Shrey and Preyansh</h6>
+    </header>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="index.html"><img src="logo.jpg" alt="" class="logo-img"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Materials</a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Material 1</a></li>
+                    <li><a href="#">Material 2</a></li>
+                    <li><a href="#">Material 3</a></li>
+                </ul>
+            </li>
+            <li><a href="#">About us</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Select Standard</h2>
+            <select id="standardSelect">
+                <option value="Standard 9">Standard 9</option>
+                <option value="Standard 10">Standard 10</option>
+                <!-- Add more standard options as needed -->
+            </select>
+        </section>
+        <section>
+            <h2>Select Subject</h2>
+            <select id="subjectSelect">
+                <option value="Mathematics">Mathematics</option>
+                <option value="Science">Science</option>
+                <option value="Gujarati">Gujarati</option>
+                <option value="Hindi">Hindi</option>
+                <option value="Social Science">Social Science</option>
+                <option value="Sanskrit">Sanskrit</option>
+                <option value="Computer">Computer</option>
+                <option value="Elements of Engineering">Elements of Engineering</option>
+                <!-- Add more subject options as needed -->
+            </select>
+        </section>
+        <section>
+            <h2>Papers</h2>
+            <table id="papersTable">
+                <thead>
+                    <tr>
+                        <th>Paper Name</th>
+                        <th>Download</th>
+                        <th>Solution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Papers will be populated dynamically based on the selected subject -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        <ul class="social-icon">
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a></li>
+        </ul>
+        <ul class="menu">
+            <li class="menu__item"><a class="menu__link" href="index.html">Home</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">Materials</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+
+        </ul>
+        <p>&copy;2021 shreypreyansh | All Rights Reserved</p>
+    </footer>
+    <script>
+        // Sample data representing exam papers
+        const papersData = {
+            "Standard 9": {
+                "Mathematics": [
+                    { name: "9th Mathematics Paper 1", paperLink: "maths_paper_1.pdf", solutionLink: "maths_paper_1_solution.pdf" },
+                    { name: "9th Mathematics Paper 2", paperLink: "maths_paper_2.pdf", solutionLink: "maths_paper_2_solution.pdf" }
+                ],
+                "Science": [
+                    { name: "9th Science Paper 1", paperLink: "science_paper_1.pdf", solutionLink: "science_paper_1_solution.pdf" },
+                    { name: "9th Science Paper 2", paperLink: "science_paper_2.pdf", solutionLink: "science_paper_2_solution.pdf" }
+                ],
+                // Add more subjects and papers as needed
+                "Gujarati": [
+                    { name: "9th Gujarati Paper 1", paperLink: "gujarati_paper_1.pdf", solutionLink: "gujarati_paper_1_solution.pdf" },
+                    { name: "9th Gujarati Paper 2", paperLink: "gujarati_paper_2.pdf", solutionLink: "gujarati_paper_2_solution.pdf" }
+                ],
+                "Hindi": [
+                    { name: "9th First test Hindi Paper 2024 ", paperLink: "9thpaperhindi.pdf", solutionLink: "hindi_sol24.pdf" },
+                    { name: "9th Second test Hindi Paper 2024", paperLink: "9thpaperhindi.pdf", solutionLink: "hindi_sol24.pdf" },
+                ]
+
+            },
+            "Standard 10": {
+                "Mathematics": [
+                    { name: "10th Mathematics Paper 1", paperLink: "maths_paper_3.pdf", solutionLink: "maths_paper_3_solution.pdf" },
+                    { name: "10th Mathematics Paper 2", paperLink: "maths_paper_4.pdf", solutionLink: "maths_paper_4_solution.pdf" }
+                ],
+                "Science": [
+                    { name: "10th Science Paper 1", paperLink: "science_paper_3.pdf", solutionLink: "science_paper_3_solution.pdf" },
+                    { name: "10th Science Paper 2", paperLink: "science_paper_4.pdf", solutionLink: "science_paper_4_solution.pdf" }
+                ],
+                // Add more subjects and papers as needed
+                "Gujarati": [
+                    { name: "10th Gujarati Paper 1", paperLink: "gujarati_paper_3.pdf", solutionLink: "gujarati_paper_3_solution.pdf" },
+                    { name: "10th Gujarati Paper 2", paperLink: "gujarati_paper_4.pdf", solutionLink: "gujarati_paper_4_solution.pdf" }
+                ]
+            }
+        };
+
+
+        // Function to populate papers list based on the selected subject
+        function populatePapers() {
+            const standardSelect = document.getElementById("standardSelect");
+            const subjectSelect = document.getElementById("subjectSelect");
+            const papersTableBody = document.querySelector("#papersTable tbody");
+            const selectedStandard = standardSelect.value;
+            const selectedSubject = subjectSelect.value;
+
+            // Clear existing rows from the table
+            papersTableBody.innerHTML = "";
+
+            papersData[selectedStandard][selectedSubject].forEach(paper => {
+                const row = document.createElement("tr");
+
+                const paperNameCell = document.createElement("td");
+                paperNameCell.textContent = paper.name;
+                row.appendChild(paperNameCell);
+
+                const downloadButtonCell = document.createElement("td");
+                const downloadButton = document.createElement("button");
+                downloadButton.textContent = "Download Paper";
+                downloadButton.className = "button";
+                downloadButton.onclick = function () {
+                    window.location.href = paper.paperLink;
+                };
+                downloadButtonCell.appendChild(downloadButton);
+                row.appendChild(downloadButtonCell);
+
+                const solutionButtonCell = document.createElement("td");
+                const solutionButton = document.createElement("button");
+                solutionButton.textContent = "Download Solution";
+                solutionButton.className = "button";
+                solutionButton.onclick = function () {
+                    window.location.href = paper.solutionLink;
+                };
+                solutionButtonCell.appendChild(solutionButton);
+                row.appendChild(solutionButtonCell);
+
+                papersTableBody.appendChild(row);
+            });
+        }
+
+        // Initial population of subjects based on the default selected standard
+        populatePapers();
+
+        // Event listener for standard and subject selection
+        document.getElementById("standardSelect").addEventListener("change", populatePapers);
+        document.getElementById("subjectSelect").addEventListener("change", populatePapers);
+
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
